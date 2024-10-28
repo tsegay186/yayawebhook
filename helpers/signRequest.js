@@ -1,5 +1,6 @@
+import signPayload from "./signPayload.js";
 const signRequest = (req,res, next) => {
-    const signature = sign(req.body)
+    const signature = signPayload(req.body)
     req.headers['YAYA-SIGNATURE'] = signature;
     next();
   }
